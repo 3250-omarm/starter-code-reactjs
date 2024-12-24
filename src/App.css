@@ -1,7 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+:root{
+ /*Primary*/
+
+--Grayish-blue: hsl(237, 18%, 59%);
+--Soft-red: hsl(345, 95%, 68%);
+
+ /*Neutral*/
+
+--White: hsl(0, 0%, 100%);
+--Dark-desaturated-blue: hsl(236, 21%, 26%);
+--Very-dark-blue: hsl(235, 16%, 14%);
+--Very-dark-blue2: hsl(234, 17%, 12%);
+
+}
+
+body{
+  min-height: 100vh;
+  background-image: url('./Assets/images/pattern-hills.svg');
+  background-color: var(--Very-dark-blue2);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  position: relative;
+  Font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+}
+.timeDown{
+  display: grid;
+  place-content: center;
+  gap: 100px;
+  width: 100%;
+  height: 70vh;
+  background-image: url('./Assets/images/bg-stars.svg');
+  background-size: cover;
+  .title {
+    color: var(--White);
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+
+  }
+
+  .clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+
+  .left{
+    font-size: 5rem;
+    color: var(--Soft-red);
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    padding: 15px 15px;
+    background-color: var(--Dark-desaturated-blue);
+    position: relative;
+    z-index: 2;
+    box-shadow: 1px 2px black;
 
 
+    &::before{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 47%;
+      left: -5px;
+      background-color: var(--Very-dark-blue2);
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 47%;
+      right: -5px;
+      background-color: var(--Very-dark-blue2);
+    }
+    .splitter{
+      position: absolute;
+      width: 100%;
+      height: 0.5px;
+      background-color: var(--Very-dark-blue);
+      top: 50%;
+      left: 0;
+      right: 0;
+      z-index: -2;
+    
+    }
+  }
+  .type{
+    text-align: center;
+    color: var(--Grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+  }
+
+  
+}
+
+/*MediaQueries*/
+
+@media screen and (max-width:550px) and (min-width:250px){
+  .timeDown{
+    .title{
+      font-size: 30px;
+    }
+  }
+.card{
+  .left{
+    font-size: 1rem;
+    width: 65px;
+  }
+  .type{
+    font-size: 6px;
+  }
+}
+  
+}
